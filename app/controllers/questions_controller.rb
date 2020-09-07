@@ -1,6 +1,5 @@
 class QuestionsController < ApplicationController
   def ask
-    @question = params[:question]
   end
 
   def coach_answer(question)
@@ -14,8 +13,8 @@ class QuestionsController < ApplicationController
     return @answer
   end  
     
-  def answer  
-    @answer = params[:answer]
-  end
-  
+  def answer
+    @question =  params[:question]
+    @answer = coach_answer(@question)
+  end 
 end
